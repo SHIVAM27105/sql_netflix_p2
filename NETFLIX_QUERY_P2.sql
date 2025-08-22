@@ -34,7 +34,6 @@ SELECT DISTINCT type FROM netflix;
 SELECT type, COUNT(*) AS TOTAL_CONTENT FROM netflix GROUP BY 1 ORDER BY 2 ASC;
 
 -- Find the most common rating for movies and TV shows.
-
 SELECT type, rating FROM 
 (
 SELECT type, rating, COUNT(rating),
@@ -44,7 +43,6 @@ FROM netflix GROUP BY 1,2
 WHERE RANK=1;
 
 -- List all movies released in a specific year (e.g., 2020)
-
 SELECT * FROM netflix WHERE type = 'Movie' AND release_year = 2020;
 
 -- Find the top 5 countries with the most content on Netflix
@@ -109,4 +107,7 @@ CASE
   END AS category
   FROM netflix
   ) GROUP BY 1 ORDER BY 2 DESC;
+
+-- End of Project
+
 
